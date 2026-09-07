@@ -1,0 +1,25 @@
+{
+  // The GitHub Actions extension validates .github/workflows/* against the
+  // real workflow schema, so YAML autocompletion there is context-aware:
+  // it knows `runs-on` is valid and `run-on` is not, before you push.
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.autoIndent": "advanced"
+  },
+  "yaml.format.singleQuote": false,
+  "yaml.validate": true,
+
+  // Kubernetes manifests get schema validation too (phases 05+).
+  "yaml.schemas": {
+    "https://raw.githubusercontent.com/yannh/kubernetes-json-schema/master/v1.31.0-standalone-strict/all.json": [
+      "deploy/k8s/**/*.yaml"
+    ]
+  },
+
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "git.autofetch": true
+}

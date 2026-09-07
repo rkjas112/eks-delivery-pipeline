@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "github.vscode-github-actions",
+    "redhat.vscode-yaml",
+    "ms-azuretools.vscode-docker",
+    "eamodio.gitlens",
+    "ms-kubernetes-tools.vscode-kubernetes-tools",
+    "hashicorp.terraform"
+  ]
+}
