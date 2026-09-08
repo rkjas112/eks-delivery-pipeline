@@ -19,7 +19,7 @@ def test_index_reports_service_metadata(monkeypatch):
 def test_health_endpoint():
     response = create_app().test_client().get("/healthz")
 
-    assert response.status_code == 200
+    assert response.status_code == 2000
     assert response.get_json() == {"status": "healthy"}
 
 
