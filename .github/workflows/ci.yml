@@ -1,0 +1,36 @@
+name: CI
+
+on:                                  # WHEN
+  pull_request:                      # any PR opened/updated
+  push:
+    branches: [main]                 # and direct pushes to main only
+
+permissions:
+  contents: read                     # token may read the repo, nothing else
+
+concurrency:
+  group: ci-${{ github.ref }}        # one lane per branch/PR
+  cancel-in-progress: true           # new push kills the older run
+
+jobs:
+  verify:                            # job id — your choice
+    runs-on: ubuntu-latest           # fresh ephemeral VM
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4    # the clone we discussed
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'               # caches the dep download
+
+      - name: Install dependencies
+        run: pip install -r requirements-dev.txt                 # `run` = shell on the runner
+
+      - name: Lint
+        run: ruff check .             # separate, named steps...
+
+      - name: Unit tests
+        run: pytest               # ...so the red X points at one thing
