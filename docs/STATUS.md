@@ -27,6 +27,27 @@ https://claude.ai/code/artifact/0c8911c9-972b-4449-a8cd-4d5659c2b12a
 
 ---
 
+## Pace — decided 2026-09-08 ~05:32am
+
+Between jobs: **6–8 h/day available**. Chose **interview-ready first, polish after**.
+
+```
+ D1  phase 01   author ci.yml, break it, fix it
+ D2  phase 02   image -> GHCR, OIDC, matrix
+ D3  phase 03   outputs, artifacts, cache
+ D4  phase 04   environments, gates, reusable workflows
+ D5  phase 05   deploy to kind  +  interview drill
+     ------------------------------------------------
+     then       polish: phases 06-10   (+10-12 days)
+```
+
+Daily shape: ~2 h video -> ~4 h author + debug -> ~1 h quiz + LEARNING_LOG.
+If a day slips, the video hour dies — never the 4 h authoring block.
+
+**Day 1 has not started.** Session 1 was video only. Day 1 begins after sleep.
+
+---
+
 ## THE NEXT ACTION
 
 1. Round 2 of the quiz — the "why" questions (Round 1 done, see below).
